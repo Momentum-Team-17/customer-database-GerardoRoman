@@ -26,9 +26,41 @@ let nameEl = document.createElement("h2");
 let text = document.createTextNode(`${capitalizeFirstLetter(customer.name.first)} ${capitalizeFirstLetter(customer.name.last)}`)
 nameEl.appendChild(text);
 newElement.appendChild(nameEl);
+
+// create thumbnail picture
+let thumbEl = document.createElement("img");
+thumbEl.src = (`${customer.picture.large}`);
+thumbEl.classList.add("thumbnail");
+newElement.appendChild(thumbEl);
+
+// create email
 let emailEl = document.createElement("p");
 let emailText = document.createTextNode(`${customer.email}`)
 emailEl.appendChild(emailText);
 newElement.appendChild(emailEl);
+
+// create phone number
+let phoneEl = document.createElement("p");
+let phoneText = document.createTextNode(`${customer.phone}`)
+phoneEl.appendChild(phoneText);
+newElement.appendChild(phoneEl);
+
+// create address
+let locationEl = document.createElement("p");
+let locationText = document.createTextNode(`${customer.location}`)
+locationEl.appendChild(locationText);
+newElement.appendChild(locationEl);
+
+// create DOB
+// let locationEl = document.createElement("p");
+// let locationText = document.createTextNode(`${customer.location}`)
+// locationEl.appendChild(locationText);
+// newElement.appendChild(locationEl);
+
+// create registration date 
+
+
+// move towards end after
 directory.appendChild(newElement);
+// move towards end after 
 }
