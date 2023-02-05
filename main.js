@@ -46,16 +46,25 @@ phoneEl.appendChild(phoneText);
 newElement.appendChild(phoneEl);
 
 // create address
-let locationEl = document.createElement("p");
-let locationText = document.createTextNode(`${customer.location}`)
-locationEl.appendChild(locationText);
-newElement.appendChild(locationEl);
-
-// create DOB
 // let locationEl = document.createElement("p");
-// let locationText = document.createTextNode(`${customer.location}`)
+// locationEl.classList.add("location");
+// let locationText = document.createTextNode(`${customer.location.street.number} ${customer.street.name}`);
 // locationEl.appendChild(locationText);
 // newElement.appendChild(locationEl);
+
+// let cityStateEl = document.createElement("p");
+// cityStateEl.classList.add("location-zip");
+// let cityStateText = document.createTextNode(`${customer.location.city} ${nameToAbbr(customer.location.state)} ${customer.location.postcode}`);
+// cityStateEl.appendChild(cityStateText);
+// newElement.appendChild(cityStateEl);
+
+// create DOB
+// let dobEl = document.createElement("p");
+// dobEl.classList.add("dob");
+// // let dobFormat = moment(customer.dob.date).format("MMM Do YYYY");
+// // let dobText = document.createTextNode(`DOB: ${dobFormat}`);
+// dobEl.appendChild(dobText);
+// newElement.appendChild(dobEl);
 
 // create registration date 
 
