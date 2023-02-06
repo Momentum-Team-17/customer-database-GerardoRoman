@@ -23,7 +23,7 @@ function buildCustomerHtml(customer) {
     // create div(box) for each customer to hold name, img, all info
 let newElement = document.createElement("div");
 let nameEl = document.createElement("h2");
-let text = document.createTextNode(`${capitalizeFirstLetter(customer.name.first)} ${capitalizeFirstLetter(customer.name.last)}`)
+let text = document.createTextNode(`${capitalizeFirstLetter(customer.name.first)} ${capitalizeFirstLetter(customer.name.last)}`);
 nameEl.appendChild(text);
 newElement.appendChild(nameEl);
 
@@ -35,39 +35,43 @@ newElement.appendChild(thumbEl);
 
 // create email
 let emailEl = document.createElement("p");
-let emailText = document.createTextNode(`${customer.email}`)
+let emailText = document.createTextNode(`${customer.email}`);
 emailEl.appendChild(emailText);
 newElement.appendChild(emailEl);
 
 // create phone number
 let phoneEl = document.createElement("p");
-let phoneText = document.createTextNode(`${customer.phone}`)
+let phoneText = document.createTextNode(`${customer.phone}`);
 phoneEl.appendChild(phoneText);
 newElement.appendChild(phoneEl);
 
 // create address
-// let locationEl = document.createElement("p");
-// locationEl.classList.add("location");
-// let locationText = document.createTextNode(`${customer.location.street.number} ${customer.street.name}`);
-// locationEl.appendChild(locationText);
-// newElement.appendChild(locationEl);
+let locationEl = document.createElement("p");
+locationEl.classList.add("location");
+let locationText = document.createTextNode(`${customer.location.street.number} ${customer.location.street.name}`);
+locationEl.appendChild(locationText);
+newElement.appendChild(locationEl);
 
-// let cityStateEl = document.createElement("p");
-// cityStateEl.classList.add("location-zip");
-// let cityStateText = document.createTextNode(`${customer.location.city} ${nameToAbbr(customer.location.state)} ${customer.location.postcode}`);
-// cityStateEl.appendChild(cityStateText);
-// newElement.appendChild(cityStateEl);
+let cityStateEl = document.createElement("p");
+cityStateEl.classList.add("location");
+let cityStateText = document.createTextNode(`${customer.location.city} ${nameToAbbr(customer.location.state)} ${customer.location.postcode}`);
+cityStateEl.appendChild(cityStateText);
+newElement.appendChild(cityStateEl);
 
 // create DOB
-// let dobEl = document.createElement("p");
-// dobEl.classList.add("dob");
-// // let dobFormat = moment(customer.dob.date).format("MMM Do YYYY");
-// // let dobText = document.createTextNode(`DOB: ${dobFormat}`);
-// dobEl.appendChild(dobText);
-// newElement.appendChild(dobEl);
+let dobEl = document.createElement("p");
+dobEl.classList.add("dob");
+let dobFormat = moment(customer.dob.date).format("MMM Do YYYY");
+let dobText = document.createTextNode(`DOB: ${dobFormat}`);
+dobEl.appendChild(dobText);
+newElement.appendChild(dobEl);
 
 // create registration date 
-
+let registeredEl = document.createElement("p");
+registeredEl.classList.add("date-registered");
+let registeredText = document.createTextNode(`Customer since: ${moment(customer.registered.date).format("MMM Do YYYY")}`);
+registeredEl.appendChild(registeredText);
+newElement.appendChild(registeredEl);
 
 // move towards end after
 directory.appendChild(newElement);
